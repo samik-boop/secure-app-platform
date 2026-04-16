@@ -1,8 +1,12 @@
 from flask import Flask, render_template
 app = Flask(__name__)
-@app.route ("/health")
+@app.route("/health")
 def health():
-  return {"status": "ok"}
+    return {
+        "status": "OK",
+        "service": "secure-app",
+        "version": "1.0"
+    }
 @app.route("/")
 def home():
     return render_template("index.html")
